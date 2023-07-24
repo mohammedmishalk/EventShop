@@ -69,7 +69,7 @@ export default function CheckoutPage() {
             <div className="text-gray-800 text-[40px] font-bold">Checkout</div>
           </div>
        
-          <div className=" left-[16px] top-[5px] mt-5    sm:left-[80px] sm:top-[46px] absolute text-red-500 text-[40px] font-bold sm:text-violet-900 ">
+          <div className=" left-[16px] top-[5px] mt-5    sm:left-[80px] sm:top-[46px] absolute text-violet-900 text-[40px] font-bold sm:text-violet-900 ">
             EventShop
           </div>
           {/* Form section */}

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import React, { Suspense, lazy } from 'react';
-
+import Spinner from './Components/Spinner';
 const LazyCheckoutPage = lazy(() => import('./Pages/CheckoutPage'));
 const LazyCheckoutPageSecond = lazy(() => import('./Pages/CheckoutPageSecond'));
 
@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Suspense fallback={<div>Loading...</div>}><LazyCheckoutPage /></Suspense>} />
-          <Route path="/checkout" element={<Suspense fallback={<div>Loading...</div>}><LazyCheckoutPageSecond /></Suspense>} />
+          <Route path="/" element={<Suspense fallback={<Spinner/>}><LazyCheckoutPage /></Suspense>} />
+          <Route path="/checkout" element={<Suspense fallback={<Spinner/>}><LazyCheckoutPageSecond /></Suspense>} />
         </Routes>
       </Router>
     </div>
