@@ -48,6 +48,14 @@ const finalAmount = ticketNumberOne * ticketOneCount + ticketNumberTwo * ticketT
 
   const handleCouponDelete = () => {
     setAppliedCoupon("");
+    toast('Coupon Removed', {
+      icon: '🗑️',
+      style: {
+        border: '1px solid #FF0000',
+        padding: '16px',
+        color: '#FF0000',
+      },
+    });
     setDiscountAmount(0);
   }; 
 
