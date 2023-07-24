@@ -66,7 +66,7 @@ Users can apply coupon codes to get discounts on the total ticket price. The cur
 
 To apply the coupon code:
 
--Enter the coupon code 'WELCOME10' in the designated coupon code field.
--Click the 'Apply' button.
--The discount will be applied, and the updated total ticket price will be displayed.
--Please note that only one coupon code can be applied per booking.
+- Enter the coupon code 'WELCOME10' in the designated coupon code field.
+- Click the 'Apply' button.
+- The discount will be applied, and the updated total ticket price will be displayed.
+- Please note that only one coupon code can be applied per booking.
