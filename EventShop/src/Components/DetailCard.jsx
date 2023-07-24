@@ -2,7 +2,7 @@ import React from "react";
 import {  DeleteIcon } from "../Components/Buttons";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment } from "../redux/checkout";
-function DetailCard() {
+function DetailCard({discount}) {
   const { ticketNumberOne, ticketNumberTwo, ticketOneCount, ticketTwoCount } =
     useSelector((state) => state.checkout);
 
@@ -135,7 +135,15 @@ function DetailCard() {
             </div>
           </div>
           <div className="text-neutral-950 text-2xl font-bold leading-loose">
-            ${finalAmount.toFixed(2)}
+            {discount > 0 ? (
+              <>
+                ${(parseFloat(finalAmount) - parseFloat(discount)).toFixed(2)}
+                <span className="text-red-500"> (Discount: ${discount.toFixed(2)})</span>
+
+              </>
+            ) : (
+              `Pay ${finalAmount.toFixed(2)}`
+            )}
           </div>
         </div>
       </div>

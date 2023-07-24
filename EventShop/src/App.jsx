@@ -1,22 +1,18 @@
-import { BrowserRouter as Router,Route,Routes,Navigate} from 'react-router-dom';
-import CheckoutPage from './Pages/CheckoutPage';
-import CheckoutPageSecond from './Pages/CheckoutPageSecond';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
 
-
+const LazyCheckoutPage = lazy(() => import('./Pages/CheckoutPage'));
+const LazyCheckoutPageSecond = lazy(() => import('./Pages/CheckoutPageSecond'));
 
 function App() {
-
-  return (   
+  return (
     <div className="App">
       <Router>
-     
-     <Routes>
-     <Route path='/' exact  element={<CheckoutPage /> } ></Route>
-     <Route path='/checkout' element={<CheckoutPageSecond/>} ></Route>
-   
-      </Routes>
-
-     </Router>
+        <Routes>
+          <Route path="/" element={<Suspense fallback={<div>Loading...</div>}><LazyCheckoutPage /></Suspense>} />
+          <Route path="/checkout" element={<Suspense fallback={<div>Loading...</div>}><LazyCheckoutPageSecond /></Suspense>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
