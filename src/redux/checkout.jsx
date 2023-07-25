@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from 'react-hot-toast';
 
 
 const initialState = {
@@ -15,11 +16,15 @@ const initialState = {
       increment: (state, action) => {
         const { ticketNumber } = action.payload;
         if (ticketNumber === "TicketNumberOne" && state.ticketOneCount < 5) {
-           
           state.ticketOneCount += 1;
+        } else if (ticketNumber === "TicketNumberOne") {
+          toast.error("Maximum 5 Tickets ");
         }
+      
         if (ticketNumber === "TicketNumberTwo" && state.ticketTwoCount < 3) {
           state.ticketTwoCount += 1;
+        } else if (ticketNumber === "TicketNumberTwo") {
+          toast.error("Maximum 3 Tickets ");
         }
       },
       decrement: (state, action) => {
