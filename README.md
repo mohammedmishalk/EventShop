@@ -1,3 +1,4 @@
+
 # EventShop
 
 **Project Description**: This project is a ticket booking application that allows users to book tickets with specific validations and restrictions.
@@ -9,6 +10,7 @@
 - [Validations](#validations)
 - [Coupon Codes](#coupon-codes)
 - [Ticket Quantity Limits](#ticket-quantity-limits)
+- [Tech Stack](#tech-stack)
 
 ## Installation
 
@@ -70,3 +72,23 @@ To apply the coupon code:
 - Click the 'Apply' button.
 - The discount will be applied, and the updated total ticket price will be displayed.
 - Please note that only one coupon code can be applied per booking.
+
+## Tech Stack
+
+The EventShop ticket booking application utilizes the following technologies and libraries:
+
+- **React**: The front-end of the application is built using React, a popular JavaScript library for building user interfaces.
+
+- **Redux Toolkit**: For state management, Redux Toolkit is used. It simplifies the process of managing application state and helps to avoid common Redux boilerplate code.
+
+- **Yup**: Yup is used for validation schema. It provides a simple and efficient way to validate form data.
+
+- **Formik**: Formik is a library that is used to build and manage forms in React. It helps with handling form validation, submission, and form state.
+
+- **React Toastify**: To display toast messages for user notifications, React Toastify is used. It offers customizable and attractive toast notifications.
+
+- **Tailwind CSS**: Tailwind CSS is used for frontend design and styling. It is a utility-first CSS framework that provides pre-defined classes to style components quickly.
+
+By combining these technologies and libraries, EventShop delivers a robust and user-friendly ticket booking application with smooth form validation, state management, and appealing UI design.
+
+---
