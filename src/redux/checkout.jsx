@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 
 const initialState = {
-    ticketNumberOne: 12.99,
+    ticketNumberOne: 1499,
     ticketNumberTwo: 12.33,
     ticketOneCount: 1,
     ticketTwoCount: 1,

@@ -4,6 +4,7 @@ import DetailCard from "../Components/DetailCard";
 import PaymentCard from "../Components/PaymentCard";
 import { useSelector } from "react-redux";
 import toast from 'react-hot-toast';
+import { Link } from "react-router-dom";
 
 
 function CheckoutPageSecond() {
@@ -36,7 +37,7 @@ const finalAmount = ticketNumberOne * ticketOneCount + ticketNumberTwo * ticketT
     if (couponCode === correctCouponCode) {
       setAppliedCoupon(couponCode);
       toast.success(`Coupon Applied ${couponCode}`)
-      setDiscountAmount((ticketNumberOne * ticketOneCount + ticketNumberTwo * ticketTwoCount) * 10/100);
+      setDiscountAmount((ticketNumberOne * ticketOneCount + ticketNumberTwo * ticketTwoCount) * 50/100);
       setCouponCode("");
     } else {
       toast.error(`Invalid Coupon ${couponCode}`)
@@ -115,31 +116,30 @@ const finalAmount = ticketNumberOne * ticketOneCount + ticketNumberTwo * ticketT
 
         <div className="h-[109px] left-[757px] top-[200px] absolute flex-col justify-start items-start gap-4 inline-flex">
           <div className="text-neutral-950 text-base font-normal leading-tight">
-            Add any notes/comments (Optional)
+            Add Address 
           </div>
           <div className="w-[650px] h-[73px] pl-5 pr-[332px] pt-4 pb-[41px] bg-white rounded-[5px] justify-start items-center inline-flex">
             <input
               type="text"
               className="w-full h-full px-4 py-2 bg-transparent border-none outline-none text-gray-700"
-              placeholder="Leave us a note about your order"
+              placeholder="Type Address"
             />
           </div>
         </div>
 
         <PaymentCard />
 
-        <div className={`w-[650px] h-12 px-8 left-[760px] top-[810px] absolute rounded-md justify-center items-center gap-3 inline-flex ${isChecked ? "bg-blue-600" : "bg-blue-300"}`}>
-  <div className={`text-violet-50 text-base font-bold leading-none ${isChecked ? "" : "text-gray-400"}`}>
-    {discountAmount > 0 ? (
-      <>
-        Pay ${(parseFloat(finalAmount) - parseFloat(discountAmount)).toFixed(2)}
-      
-      </>
-    ) : (
-      `Pay ${finalAmount.toFixed(2)}`
-    )}
-  </div>
-</div>
+        <Link to="/payment">
+      <div className={`text-violet-50 text-base font-bold leading-none ${isChecked ? "" : "text-gray-400"}`}>
+        {discountAmount > 0 ? (
+          <>
+            Pay ${(parseFloat(finalAmount) - parseFloat(discountAmount)).toFixed(2)}
+          </>
+        ) : (
+          `Pay ${finalAmount.toFixed(2)}`
+        )}
+      </div>
+    </Link>
 
         <div className="w-[993px] h-1 left-0 top-[882px] absolute bg-blue-600" />
         <div className="px-[18px] py-4 left-[80px] top-[910px] absolute rounded-md border border-zinc-200 justify-center items-center gap-3 inline-flex">
@@ -160,9 +160,11 @@ const finalAmount = ticketNumberOne * ticketOneCount + ticketNumberTwo * ticketT
           >
             Back
           </button>
-          <div className="text-gray-800 text-[40px] font-bold">Checkout</div>
+          {/* <div className="text-gray-800 text-[40px] font-bold">Checkout</div> */}
         </div>
+       
         <div className={`w-[180px] px-6 py-4 left-[1180px] top-[910px] absolute bg-blue-600 rounded-md justify-center items-center gap-3 inline-flex ${isChecked ? "" : "opacity-50 pointer-events-none"}`}>
+        <Link to="/payment">
   <div className="text-violet-50 text-base font-bold leading-none">
     {discountAmount > 0 ? (
       <>
@@ -173,6 +175,7 @@ const finalAmount = ticketNumberOne * ticketOneCount + ticketNumberTwo * ticketT
       `Pay ${finalAmount.toFixed(2)}`
     )}
   </div>
+  </Link>
 </div>
 
         <input
@@ -195,9 +198,10 @@ const finalAmount = ticketNumberOne * ticketOneCount + ticketNumberTwo * ticketT
             Privacy Policy
           </span>
         </div>
-        <div className="left-[80px] top-[20px] absolute text-violet-900 text-[40px] font-bold">
-          EventShop
-        </div>
+        <div className="left-[16px] top-[5px] mt-5 sm:left-[80px] sm:top-[46px] absolute">
+  {/* Replace "path/to/your/image.jpg" with the actual path or URL of your image */}
+  <img src="https://www.boat-lifestyle.com/cdn/shop/files/boAt_logo_small.svg?v=1682421543" alt="Boat Lifestyle" className="w-20 h-40 sm:w-20 sm:h-60" />
+</div>
       </div>
     </div>
   );

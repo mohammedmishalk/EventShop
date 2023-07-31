@@ -17,12 +17,12 @@ function DetailCard({discount}) {
         <div className="self-stretch h-[104px] flex-col justify-start items-start gap-4 flex">
           <div className="self-stretch h-6 flex-col justify-start items-start gap-2 flex">
             <div className="w-100 grow shrink basis-0 text-neutral-950 text-lg font-medium leading-normal">
-              Ticket Number 1 Name
+            boAt Newly Launched Immortal 141 TWS Gaming Earbuds 
             </div>
           </div>
           <div className="w-[350px] justify-between items-center inline-flex sm:w-[600px] sm:justify-between sm:items-center sm:inline-flex">
             <div className="text-neutral-950 text-2xl font-bold leading-loose">
-              ${ticketNumberOne*ticketOneCount}
+              Rs{ticketNumberOne*ticketOneCount}
             </div>
             <div className="justify-center items-center gap-6 flex">
               <svg
@@ -70,14 +70,14 @@ function DetailCard({discount}) {
             <div className="w-4 h-4 left-0 top-0 absolute flex-col justify-start items-start inline-flex" />
           </div>
         </div>
-        <div className="w-[200px] h-[0px] border border-zinc-200 sm:w-[600px] sm:h-[0px] sm:border sm:border-zinc-200"></div>
+        {/* <div className="w-[200px] h-[0px] border border-zinc-200 sm:w-[600px] sm:h-[0px] sm:border sm:border-zinc-200"></div>
         <div className="w-[350px] h-[104px] flex-col justify-start items-start gap-4 flex sm:self-stretch sm:h-[104px] sm:flex-col sm:justify-start sm:items-start sm:gap-4 sm:flex">
           <div className="self-stretch h-6 flex-col justify-start items-start gap-2 flex">
             <div className="w-60 text-neutral-950 text-lg font-medium leading-normal">
               Ticket Number 2 Name
             </div>
-          </div>
-          <div className="self-stretch justify-between items-center inline-flex sm:w-[600px] sm:justify-between sm:items-center sm:inline-flex">
+          </div> */}
+          {/* <div className="self-stretch justify-between items-center inline-flex sm:w-[600px] sm:justify-between sm:items-center sm:inline-flex">
             <div className="text-neutral-950 text-2xl font-bold leading-loose">
               ${ticketNumberTwo*ticketTwoCount}
             </div>
@@ -125,7 +125,7 @@ function DetailCard({discount}) {
             <div className="w-4 h-4 left-0 top-0 absolute flex-col justify-start items-start inline-flex" />
           </div>
         </div>
-        <div className="w-[200px] h-[0px] border border-zinc-200  sm:w-[600px] sm:h-[0px] sm:border sm:border-zinc-200"></div>
+        <div className="w-[200px] h-[0px] border border-zinc-200  sm:w-[600px] sm:h-[0px] sm:border sm:border-zinc-200"></div> */}
       </div>
       <div className="self-stretch h-8 flex-col justify-start items-start gap-6 flex">
         <div className="w-[150] justify-between items-center gap-6 inline-flex sm:self-stretch sm:justify-between sm:items-center sm:gap-6 sm:inline-flex">
@@ -137,8 +137,8 @@ function DetailCard({discount}) {
           <div className="text-neutral-950 text-2xl font-bold leading-loose">
             {discount > 0 ? (
               <>
-                ${(parseFloat(finalAmount) - parseFloat(discount)).toFixed(2)}
-                <span className="text-red-500"> (Discount: ${discount.toFixed(2)})</span>
+                Rs {(parseFloat(finalAmount) - parseFloat(discount)).toFixed(2)}
+                <span className="text-red-500"> (Discount: Rs{discount.toFixed(2)})</span>
 
               </>
             ) : (
